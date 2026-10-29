@@ -1,0 +1,23 @@
+{
+  "name": "sdr-command-center-lite",
+  "displayName": "SDR Command Center Lite",
+  "version": "1.8.0",
+  "description": "A private call desk for SDRs, set up for you: playbook, call scripts and competitor replies written from your past chats, website and competitors, plus a lean lead list, one-click call logging, call blocks and a report. Optimised for Team plans.",
+  "author": {
+    "name": "Csaba Fehér",
+    "url": "https://www.linkedin.com/in/fehercsaba/"
+  },
+  "homepage": "https://www.linkedin.com/in/fehercsaba/",
+  "repository": "https://github.com/fehercsaba/sdr_command_center",
+  "license": "LicenseRef-PolyForm-Shield-1.0.0",
+  "keywords": [
+    "sales",
+    "sdr",
+    "bdr",
+    "cold-calling",
+    "call-script",
+    "sales-playbook",
+    "lead-list",
+    "hubspot"
+  ]
+}

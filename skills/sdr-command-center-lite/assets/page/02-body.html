@@ -1,0 +1,68 @@
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+    <div><h1 id="deskTitle">Call desk</h1><div class="sub1" id="deskSub">SDR Command Center Lite</div></div>
+  </div>
+  <div class="tools">
+    <button class="sm chip hidden" id="hsChip" title="HubSpot write-back">HubSpot</button>
+    <button class="sm setupchip" id="setupBtn" title="Open the setup guide: goals, tech stack, messaging, leads"><span class="dotp hidden" id="setupDot"></span><span id="setupLbl">Setup</span></button>
+    <button class="sm quiet" id="themeBtn" title="Colour theme" aria-label="Colour theme">◐</button>
+  </div>
+</header>
+<div class="demobar hidden" id="demoBar" role="status"></div>
+<div class="banner" id="banner"></div>
+
+<section class="strip" id="strip" aria-label="Today"></section>
+
+<nav class="nav" id="nav" aria-label="Sections"></nav>
+
+<section class="view" id="v-today"></section>
+
+<section class="view" id="v-leads">
+  <div class="lbar">
+    <div class="row1">
+      <input type="search" id="q" placeholder="Search name, company, title, e-mail, notes…" aria-label="Search leads">
+      <select id="fList" class="hidden" aria-label="List"></select>
+      <select id="fSort" aria-label="Sort">
+        <option value="smart">Sort: what to call next</option>
+        <option value="next">Sort: next step, soonest</option>
+        <option value="name">Sort: name A–Z</option>
+        <option value="company">Sort: company A–Z</option>
+        <option value="country">Sort: country</option>
+        <option value="touched">Sort: last touched</option>
+        <option value="added">Sort: newest added</option>
+      </select>
+      <button class="sm primary" id="addBtn">Add lead</button>
+      <button class="sm" id="importBtn">Import</button>
+      <div class="menuwrap"><button class="sm" id="moreBtn" aria-haspopup="true" title="Export, backup, lists">More ▾</button><div class="menu hidden" id="moreMenu"></div></div>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="bulk hidden" id="bulk"></div>
+  <div id="sampleNote" class="banner hidden" style="margin-top:10px"></div>
+  <div class="card hidden" id="addBox" style="margin-top:10px"></div>
+  <div class="list" id="leadList"></div>
+  <div class="more"><button id="showMore" class="hidden">Show more</button></div>
+</section>
+
+<section class="view" id="v-playbook"></section>
+<section class="view" id="v-report"></section>
+
+<footer class="foot">
+  <span>Your leads and notes are stored only in this browser. Nothing is sent anywhere unless you export it. <button class="sm quiet" id="backupBtn">Back up now</button> <span class="tiny" id="lastBackup"></span></span>
+  <span>SDR Command Center Lite · optimised for Team plans · built by <a href="https://www.linkedin.com/in/fehercsaba/" target="_blank" rel="noopener noreferrer">Csaba Fehér</a> <button class="ver" id="demoBtn" title="Switch demo mode on or off">Demo mode</button> <button class="ver" id="verBtn" title="Versions">v1.8.0</button></span>
+</footer>
+</div>
+
+<div class="overlay hidden" id="wizard" role="dialog" aria-modal="true" aria-label="Setup guide"></div>
+<div class="overlay hidden" id="focus" role="dialog" aria-modal="true" aria-label="Call block"></div>
+<div class="overlay hidden" id="modal" role="dialog" aria-modal="true"></div>
+<div class="overlay hidden" id="setupLive" aria-label="Setting up your desk"></div>
+<div class="pop hidden" id="pop"></div>
+<input type="file" id="fileIn" class="hidden" accept=".csv,.tsv,.txt,text/csv">
+<input type="file" id="jsonIn" class="hidden" accept=".json,application/json">
+<div class="toast-wrap" id="toasts" aria-live="polite"></div>
+<script type="application/json" id="sdr-seed">{}</script>
+<script>
